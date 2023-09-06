@@ -51,8 +51,14 @@ export { apiBody }
 
 
 // Ejercicio6: Vuelve a hacer el ejercicio 2 pero enviando num1 y num2 desde el body, a través de una petición POST que responda con el status 200
-
-
+const twoBody = (request, response) =>{
+    const num1 = request.body.num1
+    const num2 = request.body.num2
+    response.status(200).json({
+        "mensaje": `Resultado: ${num1+num2}`
+    })
+}
+export { twoBody }
 
 // Ejercicio7: Crea un endpoint para una petición de tipo DELETE donde envíes un ID (un número cualquiera) a través de params. Si el param contiene el ID 3, entonces responde con un status 200 y el mensaje “se ha eliminado el objeto con ID 3”, de lo contrario, si envían cualquier otro número como ID, responde con un status 404 y el mensaje “No se encontró el objeto con el ID especificado”.
 
