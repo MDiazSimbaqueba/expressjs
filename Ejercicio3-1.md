@@ -3,46 +3,42 @@
 
 ## Modelo Entidad-Relación
 <div>
-  <img align="center" src="" />
+  <img align="center" src="https://acortar.link/jMZ8ns" />
 </div>
 
 ## Query
-<!-- CREATE TABLE IF NOT EXISTS providers (
-	provider_code SERIAL PRIMARY KEY,
-	name VARCHAR(40) NOT NULL,
-	address VARCHAR(25) NOT NULL,
-	city VARCHAR(40) NOT NULL,
-	province VARCHAR(40) NOT NULL
+CREATE TABLE IF NOT EXISTS proveedores(
+	id_proveedor SERIAL PRIMARY KEY,
+	nombre VARCHAR(40) NOT NULL,
+	direccion VARCHAR(25) NOT NULL,
+	ciudad VARCHAR(40) NOT NULL,
+	provincia VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS categories (
-	category_code SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS categorias(
+	id_categoria SERIAL PRIMARY KEY,
 	name VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS parts (
-	part_code SERIAL PRIMARY KEY,
-	name VARCHAR(35) NOT NULL,
+CREATE TABLE IF NOT EXISTS partes(
+	id_parte SERIAL PRIMARY KEY,
+	nombre VARCHAR(35) NOT NULL,
 	color VARCHAR(20) NOT NULL,
-	price NUMERIC(10,2) NOT NULL,
-	category_code INT NOT NULL,
-	
-	FOREIGN KEY (category_code)
-	REFERENCES categories(category_code)
+	precio NUMERIC(10,2) NOT NULL,
+	id_categoria INT NOT NULL,
+	FOREIGN KEY (id_categoria)
+	REFERENCES categories(id_categoria)
 );
 
-CREATE TABLE IF NOT EXISTS purchase_order (
-	order_id SERIAL PRIMARY KEY,
-	amount INT NOT NULL,
-	date DATE NOT NULL,
-	time TIME WITH TIME ZONE NOT NULL,
-	
-	provider_code INT NOT NULL,
-	part_code INT NOT NULL,
-	
-	FOREIGN KEY (provider_code)
-	REFERENCES providers(provider_code),
-	
-	FOREIGN KEY (part_code)
-	REFERENCES parts(part_code)
-); -->
+CREATE TABLE IF NOT EXISTS orden_compra(
+	id_orden SERIAL PRIMARY KEY,
+	cantidad INT NOT NULL,
+	fecha DATE NOT NULL,
+	hora TIME WITH TIME ZONE NOT NULL,
+	id_proveedor INT NOT NULL,
+	id_parte INT NOT NULL,
+	FOREIGN KEY (id_proveedor)
+	REFERENCES providers(id_proveedor),
+	FOREIGN KEY (id_parte)
+	REFERENCES parts(id_parte)
+);
