@@ -3,7 +3,7 @@
 
 ## Modelo Entidad-Relación
 <div>
-  <img align="center" src="https://acortar.link/jMZ8ns" />
+  <img align="center" src="https://i.ibb.co/Kxr684C/Ejercicio3-Negocio-Piezas.jpg" alt="Ejercicio3-Negocio-Piezas" border="0"> />
 </div>
 
 ## Query
