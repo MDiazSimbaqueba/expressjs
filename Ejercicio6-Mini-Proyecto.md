@@ -92,9 +92,21 @@
     WHERE ventas.cantidad > 3
 
 ### ID y nombre de los clientes que no aparecen en la tabla de ventas (Clientes que no han comprado productos)
-    
+    SELECT clientes.id_cliente, clientes.nombre
+    FROM clientes
+    LEFT JOIN ventas
+    ON clientes.id_cliente = ventas.id_cliente
+    WHERE ventas.id_cliente IS NULL
 
 ### ID y nombre de los clientes que han comprado todos los productos de la empresa.
+    SELECT clientes.id_cliente, clientes.nombre
+    FROM clientes
+    LEFT JOIN ventas
+    ON clientes.id_cliente = ventas.id_cliente
+    INNER JOIN productos
+    ON ventas.sku_producto = productos.sku_producto
+    GROUP BY clientes.id_cliente
+    HAVING COUNT(DISTINCT ventas.sku_producto) = (SELECT * FROM COUNT(productos))
 
 ### ID y nombre de cada cliente y la suma total (suma de cantidad) de los productos que ha comprado. Pista: (https://www.postgresqltutorial.com/postgresql-sum-function/).
 
