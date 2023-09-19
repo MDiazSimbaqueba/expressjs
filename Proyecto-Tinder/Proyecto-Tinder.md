@@ -2,10 +2,31 @@
 
 ## Diagrama relacional y Entidad Relación
 <div>
-    <img align="center" src="https://i.ibb.co/HK93rNY/ER-Proyecto-Tinder.jpg" alt="ER-Proyecto-Tinder" border="0"/>
+    <img align="center" src="https://i.ibb.co/SfFD3sw/ER-Proyecto-Tinder.jpg" alt="ER-Proyecto-Tinder" border="0"/>
 </div>
 
 ## Migraciones
+### CREACION DE TABLAS POR SEQUELIZE
+    TABLA HABILIDADES
+    npx sequelize-cli model:generate --name habilidades --attributes nombre:string, descripcion:string
+
+    TABLA CONFIR_ANTICIPO
+    npx sequelize-cli model:generate --name confir_anticipo --attributes fecha_evento:date,lugar:string, hora:string
+
+    TABLA CLIENTES
+    npx sequelize-cli model:generate --name clientes --attributes nombre:string, ciudad:string, telefono:string, id_cotizacion:integer
+
+    TABLA ANTICIPO
+    npx sequelize-cli model:generate --name anticipo --attributes valor_anticipo:integer, id_cliente:integer
+
+    TABLA CUENTA
+    npx sequelize-cli model:generate --name cuenta --attributes nombre_banco:string, id_anticipo:integer, id_confir_anticipo:integer
+
+    TABLA PERSONAS
+    npx sequelize-cli model:generate --name personas --attributes nombre:string, apellido:string, celular:string, id_cuenta:integer, id_habilidad:integer
+
+    TABLA COTIZACION
+    npx sequelize-cli model:generate --name cotizacion --attributes horas_trabajo:string, valor_contrato:integer, id_confir_anticipo:integer, id_persona:integer
 
 ## MVC
 
