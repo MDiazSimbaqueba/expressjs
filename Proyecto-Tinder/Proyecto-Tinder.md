@@ -14,7 +14,7 @@
     npx sequelize-cli model:generate --name confir_anticipo --attributes fecha_evento:date,lugar:string, hora:string
 
     TABLA CLIENTES
-    npx sequelize-cli model:generate --name clientes --attributes nombre:string, ciudad:string, telefono:string, id_cotizacion:integer
+    npx sequelize-cli model:generate --name clientes --attributes nombre:string, ciudad:string, telefono:string
 
     TABLA ANTICIPO
     npx sequelize-cli model:generate --name anticipo --attributes valor_anticipo:integer, id_cliente:integer
@@ -26,7 +26,7 @@
     npx sequelize-cli model:generate --name personas --attributes nombre:string, apellido:string, celular:string, id_cuenta:integer, id_habilidad:integer
 
     TABLA COTIZACION
-    npx sequelize-cli model:generate --name cotizacion --attributes horas_trabajo:string, valor_contrato:integer, id_confir_anticipo:integer, id_persona:integer
+    npx sequelize-cli model:generate --name cotizacion --attributes horas_trabajo:string, valor_contrato:integer, id_confir_anticipo:integer, id_cliente, id_persona:integer
 
 ## MVC
 
