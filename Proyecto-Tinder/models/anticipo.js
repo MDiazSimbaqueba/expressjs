@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      anticipo.belongsTo(models.clientes,{
+        foreignKey:'id_cliente',
+        as:'cliente'
+      })
     }
   }
   anticipo.init({

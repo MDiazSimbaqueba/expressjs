@@ -18,6 +18,9 @@ module.exports = {
       id_confir_anticipo: {
         type: Sequelize.INTEGER
       },
+      id_cliente: {
+        type: Sequelize.INTEGER
+      },
       id_persona: {
         type: Sequelize.INTEGER
       },

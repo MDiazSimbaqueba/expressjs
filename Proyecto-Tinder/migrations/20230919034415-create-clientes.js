@@ -18,9 +18,6 @@ module.exports = {
       telefono: {
         type: Sequelize.STRING
       },
-      id_cotizacion: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
